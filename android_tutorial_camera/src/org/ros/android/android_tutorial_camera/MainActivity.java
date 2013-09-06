@@ -91,8 +91,8 @@ public class MainActivity extends RosActivity {
 		nodeConfiguration.setMasterUri(getMasterUri());
 		nodeConfiguration.setNodeName("ros_camera_preview_view");
 		nodeMainExecutor.execute(rosCameraPreviewView, nodeConfiguration);
-		
-		this.sensorIO = new RosSensorIO((SensorManager) getSystemService(Context.SENSOR_SERVICE), "192.168.0.158", 9999);
+				
+		this.sensorIO = new RosSensorIO((SensorManager) getSystemService(Context.SENSOR_SERVICE), getMasterUri().getHost(), 9999);
 		Thread clientThread = new Thread(this.sensorIO);
 		Log.i(LOG_TAG, "Starting SensorIO");
 		clientThread.start();

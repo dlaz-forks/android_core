@@ -88,6 +88,20 @@ class CompressedImagePublisher implements RawImageListener {
 
     cameraInfo.setWidth(size.width);
     cameraInfo.setHeight(size.height);
+    cameraInfo.setK(new double[] {	785.207308,	0.000000,	407.803309,
+    								0.000000,	781.730221,	217.802116,
+    								0.000000,	0.000000,	1.000000
+    							 });
+    cameraInfo.setP(new double[] {	786.238892,	0.000000,	408.398349,	0.000000,
+						    		0.000000,	787.552979,	215.876913,	0.000000,
+						    		0.000000,	0.000000,	1.000000,	0.000000
+    							 });
+    cameraInfo.setR(new double[] {	1.000000, 0.000000, 0.000000,
+    								0.000000, 1.000000, 0.000000,
+    								0.000000, 0.000000, 1.000000
+    							 });
+    cameraInfo.setD(new double[] {0.143709, -0.519610, -0.005889, 0.000859, 0.000000});
+    cameraInfo.setDistortionModel("plumb_bob");
     cameraInfoPublisher.publish(cameraInfo);
   }
 }
